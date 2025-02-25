@@ -35,6 +35,7 @@ export class CounterApp extends DDDSuper(I18NMixin(LitElement)) {
         new URL("./locales/counter-app.ar.json", import.meta.url).href +
         "/../",
       locales: ["ar", "es", "hi", "zh"],
+      // What is this ^= Supports internationalization (I18N) - 
     });
   }
 
@@ -105,12 +106,16 @@ export class CounterApp extends DDDSuper(I18NMixin(LitElement)) {
   }
 
   decrease(){
-    this.count--;
+    if (this.count > this.min)
+    {
+      this.count--;
+    }
+    
   }
 
   reset()
   {
-    
+    this.count = this.min;
   }
 
   updated(changeProperties){
@@ -118,6 +123,7 @@ export class CounterApp extends DDDSuper(I18NMixin(LitElement)) {
     if (changeProperties.has("count"))
     {
       console.log("Count changed: " , this.count)
+    
       if (this.count == 21)
       {
         this.makeItRain();
@@ -154,6 +160,7 @@ export class CounterApp extends DDDSuper(I18NMixin(LitElement)) {
     return new URL(`./lib/${this.tag}.haxProperties.json`, import.meta.url)
       .href;
   }
+  
 }
 
 globalThis.customElements.define(CounterApp.tag, CounterApp);
