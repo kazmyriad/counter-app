@@ -86,6 +86,7 @@ export class CounterApp extends DDDSuper(I18NMixin(LitElement)) {
         <div class="buttons">
           <button @click="${this.increase}">+</button>
           <button @click="${this.decrease}">-</button>
+          <button @click="${this.reset}">reset</button>
         </div>
       </div>
     </confetti-container>
