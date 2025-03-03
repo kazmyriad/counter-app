@@ -56,12 +56,12 @@ export class CounterApp extends DDDSuper(I18NMixin(LitElement)) {
     css`
       :host {
         display: block;
-        color: var(--ddd-theme-primary);
+        color: var(--ddd-theme-default-beaverBlue);
         background-color: var(--ddd-theme-accent);
         font-family: var(--ddd-font-navigation);
       }
       :host([count="18"]){
-        /* color: var enter ddd here */
+        color: var(--ddd-theme-default-original87Pink)
       }
       .wrapper {
         margin: var(--ddd-spacing-2);
@@ -69,7 +69,7 @@ export class CounterApp extends DDDSuper(I18NMixin(LitElement)) {
       }
       .counter
       {
-        /* font-size: */
+        font-size: 18px;
       }
       h3 span {
         font-size: var(--counter-app-label-font-size, var(--ddd-font-size-s));
